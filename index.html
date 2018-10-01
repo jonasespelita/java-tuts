@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Jumpstarting Java by Jonah Jose Espelita</title>
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <div class="slides">
+
+      <section>
+        <h2>Jumpstarting</h2>
+        <h1>Java & Spring</h1>
+      </section>
+
+      <section>
+        <h1>hu u?</h1>
+        <h3 class="fragment">Jonah Jose Espelita</h3>
+
+        <ul>
+          <li class="fragment">Oracle Certified Java Programmer</li>
+          <li class="fragment">Java Programmer for 10+ years</li>
+        </ul>
+      </section>
+
+      <section style="text-align: left"
+        id="agenda">
+        <h2>Agenda</h2>
+        <h3 class="fragment">Introduction to Java</h3>
+
+        <ul class="fragment">
+          <li>Overview</li>
+          <li>Features</li>
+          <li>Java Program Structure</li>
+          <li>Hello World</li>
+          <li>Object Oriented Programming</li>
+        </ul>
+        <h3 class="fragment">Introduction to Spring</h3>
+
+        <ul class="fragment">
+          <li>Spring Overview</li>
+          <li>Hello World with Spring</li>
+          <li>TI Spring Archetype Basics</li>
+        </ul>
+      </section>
+
+      <section id="intro-java">
+        <section>
+          <h3>Intro to</h3>
+          <h1>Java</h1>
+        </section>
+
+        <section style="text-align: left">
+          <h3>The Java Story</h3>
+
+          <ul style="list-style: none;">
+
+            <li class="fragment">JAVA was developed by Sun Microsystems Inc in 1991
+            </li>
+            <li class="fragment">by James Gosling and Patrick Naughton</li>
+            <li class="fragment">later acquired by Oracle</li>
+            <li class="fragment">guaranteed to be <b>Write Once, Run Anywhere.</b></li>
+            <li class="fragment">now one of the <b>most popular programming languages in the world</b></li>
+          </ul>
+        </section>
+
+        <section style="text-align: left;">
+          <h2>Features</h2>
+
+          <ul>
+            <li class="fragment">Simple</li>
+            <li class="fragment">Robust</li>
+            <li class="fragment">Secure</li>
+            <li class="fragment">Distributed (RMI, EJB)</li>
+            <li class="fragment">Multithreading</li>
+            <li class="fragment">Portable(Write Once, Run Anywhere.)</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section id="first-program">
+          <h3>A Simple Java Program</h3>
+<pre class="fragment java"><code>
+public class SimpleJavaProgram {
+  public static void main(String[] args){
+    String msg = "hello world!";
+    if(!msg.isEmpty()){
+      System.out.println(msg);
+    } else {
+      System.out.println("no message!");
+    }
+  }//End of main
+}//End of SimpleJavaProgram Class
+</code></pre>
+        </section>
+        <section><h3>Java Class</h3>
+<pre><code class="java">
+public class SimpleJavaProgram {
+  ...
+}
+</code></pre>
+        </section>
+        <section>
+          <h3>Java Method</h3>
+<pre><code class=" java">
+public static void main(String[] args)  {
+  ...
+}
+</code></pre>
+        </section>
+        <section>
+          <h3>Java Variables</h3>
+<pre><code class=" java">
+String msg = "hello world!";  
+</code></pre>
+<pre><code class=" java">
+data_type variable_name = value
+</code></pre>
+<div class="fragment">
+  <h4 >Primitive Data Types</h4>
+  <pre><code class=" java">
+byte byte;
+short shortNum;
+int intNum;
+long intNum;
+float floatpt;
+double double;
+char ch;
+boolean bool;
+  </code></pre>
+  
+</div>
+        </section>
+        <section>
+          <h3>Control Flow Structures</h3>
+<pre><code class="java">
+    // if-else
+    if(!msg.isEmpty()){
+      ...
+    } else {
+      ...
+    }  
+</code></pre>
+        
+        </section>
+        <section>
+          <h3>More Control Flow Structures</h3>
+          <div class="fragment">
+<pre><code class="java">
+// while loop
+while (boolean_expression)
+{
+  statement(s)
+}
+
+// do-while
+do
+{
+  statement(s)
+}
+while (boolean_expression);
+
+// for loops
+for (initialCondition; boolean_Expression; iterativeStatement) 
+{   
+ statement(s)
+}
+</code></pre>
+</div>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/main.js">
+    // webpack!
+
+  </script>
+</body>
+</html>
