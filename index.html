@@ -34,23 +34,30 @@
 
       <section style="text-align: left"
         id="agenda">
-        <h2>Agenda</h2>
-        <h3 class="fragment">Introduction to Java</h3>
+        <section>
+          <h2>Agenda</h2>
+          <h3 class="fragment">Introduction to Java</h3>
 
-        <ul class="fragment">
-          <li>Overview</li>
-          <li>Features</li>
-          <li>Java Program Structure</li>
-          <li>Hello World</li>
-          <li>Object Oriented Programming</li>
-        </ul>
-        <h3 class="fragment">Introduction to Spring</h3>
+          <ul class="fragment">
+            <li>Overview</li>
+            <li>Features</li>
+            <li>Java Program Structure</li>
+            <li>Hello World</li>
+            <li>Object Oriented Programming</li>
+          </ul>
 
-        <ul class="fragment">
-          <li>Spring Overview</li>
-          <li>Hello World with Spring</li>
-          <li>TI Spring Archetype Basics</li>
-        </ul>
+        </section>
+        <section>
+          <h2>Agenda</h2>
+          <h3 >Introduction to Spring</h3>
+
+          <ul class="fragment">
+            <li>Spring Overview</li>
+            <li>Hello World with Spring</li>
+            <li>TI Spring Archetype Basics</li>
+          </ul>          
+        </section>
+        
       </section>
 
       <section id="intro-java">
@@ -86,6 +93,7 @@
           </ul>
         </section>
       </section>
+
       <section>
         <section id="first-program">
           <h3>A Simple Java Program</h3>
@@ -117,8 +125,8 @@ public static void main(String[] args)  {
 }
 </code></pre>
         </section>
-        <section>
-          <h3>Java Variables</h3>
+        <section id="java-variables">
+          <h3 >Java Variables</h3>
 <pre><code class=" java">
 String msg = "hello world!";  
 </code></pre>
@@ -128,14 +136,14 @@ data_type variable_name = value
 <div class="fragment">
   <h4 >Primitive Data Types</h4>
   <pre><code class=" java">
-byte byte;
-short shortNum;
-int intNum;
-long intNum;
-float floatpt;
-double double;
-char ch;
-boolean bool;
+byte byte; // 8-bit signed integer
+short shortNum; // 16-bit signed integer
+int intNum; // 32-bit signed integer
+long intNum; // 64-bit signed integer
+float floatpt; // 32-bit floating point
+double double; // 64-bit floating point
+char ch; // 16-bit unicode character
+boolean bool; // true/false
   </code></pre>
   
 </div>
@@ -177,6 +185,318 @@ for (initialCondition; boolean_Expression; iterativeStatement)
 </code></pre>
 </div>
         </section>
+        <section id="first-program-redux">
+          <h3>A Simple Java Program</h3>
+<pre class=" java"><code>
+public class SimpleJavaProgram {
+  public static void main(String[] args){
+    String msg = "hello world!";
+    if(!msg.isEmpty()){
+      System.out.println(msg);
+    } else {
+      System.out.println("no message!");
+    }
+  }//End of main
+}//End of SimpleJavaProgram Class
+</code></pre>
+        </section>
+      </section>
+      <section>
+        <section style="text-align: left;">
+          <h1>Object Oriented Programming</h1>
+        </section >
+        <section id="oop-concepts"style="text-align: left">
+          <h3>OOP Concepts</h3>
+          <div class="fragment" style="width: 200px; float: left;">
+            <ul>
+              <li>Object</li>
+              <li>Class</li>
+              <li>Inheritance</li>
+              <li>Polymorphism</li>
+              <li>Abstraction</li>
+              <li>Encapsulation</li>
+            </ul>
+          </div>
+          <div class="fragment" style="float: right;">
+            <img src="img/java-oops.png" alt="">
+          </div>
+        </section>
+        <section>
+          <h3>OOP - Object</h3>
+          <div>
+          <ul class="fragment">
+            <li>State</li>
+            <li>Behavior</li>
+            <li class="fragment">instance of a class</li>
+          </ul>
+          </div>
+  <div class="fragment">
+    <iframe src="https://giphy.com/embed/4Zo41lhzKt6iZ8xff9" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/4Zo41lhzKt6iZ8xff9">via GIPHY</a></p>
+  </div>
+        </section>
+        <section>
+          <h3>OOP - Class</h3>
+          <ul>
+            <li class="fragment">template definition of objects</li>
+            <li class="fragment">provide implementations of state and behavior</li>
+            <li class="fragment">state - <code>fields</code></li>
+            <li class="fragment">behavior - <code>methods</code></li>
+          </ul>
+          <div class="fragment">
+<pre><code class=" java">
+public class Dog{
+  String color;
+  String name;
+
+  public Dog(String color, String name){
+    this.color = color;
+    this.name = name;
+    ...
+  }
+  public void bark(){...}
+  public void eat(){...}
+}
+
+Dog doggo = new Dog("white", "snowy");
+</code></pre></div>
+        </section>
+        <section id='oop-inheritance'>
+          <h3>OOP -  Inheritance</h3>
+            <ul class="fragment">
+              <li><span >
+                classes can be derived from other classes 
+              </span><br/><span class="fragment">thereby <b>inheriting</b> state(<code>fields</code>), behavior(<code>methods</code>)</span></li>
+              <li class="fragment"><code>subclass</code> - class derived from another class</li>
+              <li class="fragment"><code>superclass</code> - class from which the subclass is derived</li>
+            </ul>
+            <div class="fragment">
+<pre><code class="java">
+public class CuteDog extends Dog{
+  public void moveEars(){
+    ...
+  }
+
+  @Override
+  public void bark(){
+    // do cute bark
+    ...
+  }
+}  
+</code></pre>
+            </div>
+        </section>
+        <section>
+          <h3>OOP - Polymorphism</h3>
+          <ul class="fragment"><li>ability of an object to take on many forms</li></ul>
+<div class="fragment">
+  <pre><code class="java">
+public class Animal{}
+public class Mammal extends Animal{}
+public class Dog extends Mammal{}
+public class CuteDog extends Dog{}
+
+// A CuteDog is a Dog
+// A CuteDog is a Mammal
+// A CuteDog is an Animal
+// A CuteDog is an Object
+
+Animal myPet = new CuteDog();
+  </code></pre>
+</div>
+        </section>
+        <section id="oop-abstraction">
+          <h3>OOP - Abstraction</h3>
+          <ul class="fragment">
+            <li>process of hiding the implementation details</li>
+            <li>only the functionality will be provided to user</li>
+          </ul>
+          <div class="fragment">
+              <h4>Interfaces</h4>
+            <pre><code class="java">
+public interface Animal{
+  void eat();
+  void walk();
+}
+            </code></pre>
+          </div>
+          <div class="fragment">
+            <h4>Abstract Classes</h4>
+            <pre><code class="java">
+public abstract class Mammal implements Animal{
+  void makeMilk(){
+    ...
+  }
+}              
+            </code></pre>
+          </div>
+
+        </section>
+        <section>
+          <h3>OOP - Abstraction & Inheritance cont'd</h3>
+<div class="fragment">
+<pre><code class="java">
+public interface Animal{...}
+
+public abstract class extends Animal{...}
+
+public class Dog extends Mammal(){...}
+
+public class Cat extends Mammal(){...}
+
+Dog myDog = new Dog();
+Cat myCat = new Cat();
+
+List &lt;Animal&gt; pets = new ArrayList&lt;&gt;();
+pets.add(myDog);
+pets.add(myCat);
+</code></pre>
+</div>
+        </section>
+        <section id="oop-encapsulation">
+          <h3>OOP - Encapsulation</h3>
+          <div style="text-align: left;">
+          <ul class="fragment">
+            <li >bundling of data and methods operating on this data into one unit</li>
+            <li >hide the internal representation</li>
+            <li >control access to the internal state</li>
+          </ul>
+          <br/>
+          <h4 class="fragment">Access Modifiers</h4>
+          <ul class="fragment">
+            <li><code>private</code> - same class only</li>
+            <li>no modifier - same package only</li>
+            <li><code>protected</code> - same package and subclasses</li>
+            <li><code>public</code> - all classes</li>
+          </ul>
+      </div>
+        </section>
+        <section style="text-align: left;">
+          <h3>OOP - Encapsulation cont'd</h3>
+          <h4 class='fragment'>Common Example - Getters/Setters</h4>
+<div class="fragment" style="width: 50%; float: left;">
+  <pre><code class="java">
+public class Dog{
+  String color;
+  String name;
+  String breed;
+  int legs;
+  // getter for color
+  public String getColor(){
+    return color;
+  }
+  // setter for color
+  public void setColor(String color){
+    this.color = color;
+  }
+  // getter for name
+  public String getName(){
+    return name;
+  }
+  // setter for name
+  public void setName(String name){
+    this.name = name;
+  }
+  ...
+}            
+  </code></pre>
+</div>
+<div class="fragment" style="width: 50%; float: right;">
+  <pre><code class="java">
+public class Dog{
+  String color;
+  String name;
+  String breed;
+  int legs;
+  // getter for color
+  public String getColor(){
+    return color;
+  }
+  // setter for color. ALWAYS upper case
+  public void setColor(String color){
+    this.color = color.toUpperCase();
+  }
+  // getter for name with doggo suffix
+  public String getName(){
+    return name + "_doggo";
+  }
+  // setter for name
+  public void setName(String name){
+    this.name = name;
+  }
+  ...
+}      
+  </code></pre>
+</div>
+
+        </section>
+      </section>
+      <section>
+        <section id="intro-spring">
+          <h3>Intro to</h3>
+          <h1>Spring</h1>
+        </section>
+        <section  style="text-align: left;">
+          <h3>What is Spring</h3>
+          <ul class="fragment">
+            <li>framework</li>
+            <li>easily Build Java Enterprise Applications</li>
+          </ul>
+          <br/>
+          <br/>
+          <div class="fragment">
+          <h4>Core Functionalities</h4>
+          <ul>
+            <li >dependency injection mechanism (IoC)</li>
+            <li >configuration model</li>
+          </ul>  
+          </div>
+          
+
+            <blockquote class="fragment" style="width: 100%" >supports a wide range of application scenarios: <br/><code><span class="fragment highlight-green">web</span>, loaders, embedded, cloud</blockquote ></code>
+
+          </ul>
+        </section>
+        <section style="text-align: left;">
+          <h4>Core Concept</h4>
+          <h3>Inversion of Control</h3>
+          <p class="fragment">Defining dependencies only through constructor args, factory methods, set after constructed</p>
+          <p class="fragment">Inverse of object defining dependencies directly.</p>
+          <div class="fragment" style="width: 50%; float: left;">
+            <pre><code class="java">
+// defining dependency directly
+public class DirectDep{
+  DepA depA = new MyDepA();
+  DepB debB = new MyDepB();
+
+  public DirectDep(){
+    ...
+  }
+}
+            </code></pre>
+          </div>
+          <div class="fragment" style="width: 50%; float: right;">
+<pre><code class="java">
+// IoC through Spring
+public class DirectDep{
+  DepA depA;
+  DepB debB;
+
+  @Autowired
+  public DirectDep(
+    DepA depA, DepB depB){
+    this.depA = depA;
+    this.depB = depB;
+  }
+}
+</code></pre>
+          </div>
+        </section>
+        <section>
+          <h1>TI Spring Archetype</h1>
+        </section>
+      </section>
+      <section>
+        <h1>Thank You!</h1>
       </section>
     </div>
   </div>
