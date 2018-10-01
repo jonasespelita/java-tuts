@@ -8,6 +8,7 @@ import espelita.fun.hello.world.spring.deps.impl.BigCat;
 import espelita.fun.hello.world.spring.deps.impl.BigDog;
 
 /**
+ * Provides dependencies in Spring. Follows the IoC principle.
  *
  * @author Jonas
  */
